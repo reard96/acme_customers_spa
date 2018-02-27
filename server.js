@@ -16,12 +16,12 @@ app.post('/api/customers', (req, res, next) => {
 });
 
 app.delete('./api/customers/:customer', (req, res, next) => {
-  customers = customers.filter(item => item !== req.params.item * 1);
+  Customer.filter(item => item !== req.params.item * 1);
   res.sendStatus(204);
 })
 
 app.get('/api/customers', (req, res, next) => {
-  res.send(customers);
+  res.send(Customer);
 });
 
 const port = process.env.PORT || 3000;

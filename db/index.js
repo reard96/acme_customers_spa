@@ -2,7 +2,7 @@ const conn = require('./conn');
 const { Sequelize } = conn;
 const Customer = require('./Customer');
 
-const initialCustomers = [
+const customers = [
   'jeff@amazon.com',
   'tim@apple.com',
   'mark@facebook.com',
@@ -16,7 +16,7 @@ const sync = () => {
 };
 
 const seedCustomers = () => {
-  return Promise.all(initialCustomers.map(customer => Customer.create(customer)));
+  return Promise.all(customers.map(cust => Customer.create(cust)));
 };
 
 const seed = () => {
